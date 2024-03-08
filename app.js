@@ -39,9 +39,8 @@ app.get("/blogs/create", (req, res) => {
 	res.render("create", { title: "Create a new blog" });
 });
 
-app.use((req, res, next) => {
+app.use((req, res) => {
 	res.render("404");
-	next();
 });
 
 app.listen(PORT, () => {
