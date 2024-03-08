@@ -6,6 +6,8 @@ const PORT = 4000;
 app.set("views", "./view");
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
 	var blogs = [
 		{
@@ -37,8 +39,9 @@ app.get("/blogs/create", (req, res) => {
 	res.render("create", { title: "Create a new blog" });
 });
 
-app.use((req, res) => {
+app.use((req, res, next) => {
 	res.render("404");
+	next();
 });
 
 app.listen(PORT, () => {
