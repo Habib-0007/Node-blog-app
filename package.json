@@ -1,7 +1,7 @@
 {
 	"name": "nodeblog",
 	"version": "1.0.0",
-	"description": "",
+	"description": "This is a simple Express app.",
 	"main": "app.js",
 	"scripts": {
 		"start": "nodemon app"
@@ -12,7 +12,6 @@
 	"dependencies": {
 		"ejs": "^3.1.9",
 		"express": "^4.18.3",
-		"nodemon": "^3.1.0",
-		"mongoose": "^5.9.20"
+		"mongoose": "^8.2.1"
 	}
 }

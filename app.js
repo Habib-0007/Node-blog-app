@@ -6,6 +6,8 @@ const PORT = 4000;
 app.set("views", "./view");
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
 	var blogs = [
 		{
@@ -40,8 +42,6 @@ app.get("/blogs/create", (req, res) => {
 app.use((req, res) => {
 	res.render("404");
 });
-
-app.use(express.static("public"))
 
 app.listen(PORT, () => {
 	console.log(`Your server is running at ${PORT}`);
