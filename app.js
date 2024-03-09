@@ -1,12 +1,17 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 const PORT = 4000;
 
+/* const dbURI =
+	"mongodb+srv://habib:L!J9EjUF8B3w.Yb@blogs.kyfrkyt.mongodb.net/?retryWrites=true&w=majority&appName=blogs";
+mongoose.connect(dbURI); */
+
 app.set("views", "./view");
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+app.use(express.static("public")); 
 
 app.get("/", (req, res) => {
 	var blogs = [
@@ -40,7 +45,7 @@ app.get("/blogs/create", (req, res) => {
 });
 
 app.use((req, res) => {
-	res.render("404");
+	res.render("404", { title: "This page does not exist" });
 });
 
 app.listen(PORT, () => {
