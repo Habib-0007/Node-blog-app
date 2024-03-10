@@ -2,16 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 
-/* const dbURI =
-	"mongodb+srv://habib:L!J9EjUF8B3w.Yb@blogs.kyfrkyt.mongodb.net/?retryWrites=true&w=majority&appName=blogs";
-mongoose.connect(dbURI); */
+const uri =
+	"mongodb+srv://habib:iamhabib007@blogs.kyfrkyt.mongodb.net/?retryWrites=true&w=majority&appName=blogs";
+try {
+	mongoose.connect(uri);
+} catch (error) {
+	console.log("could not connect");
+}
 
 app.set("views", "./view");
 app.set("view engine", "ejs");
 
-app.use(express.static("public")); 
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 	var blogs = [

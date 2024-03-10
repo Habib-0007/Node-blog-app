@@ -49,7 +49,7 @@
   .blogs {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: start;
     flex-direction: column;
     gap: 16px;
   }
